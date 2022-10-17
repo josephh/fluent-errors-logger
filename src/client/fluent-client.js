@@ -37,6 +37,5 @@ const getAccessToken = async () => {
 
 /**
  * Do the work to assemble a POST request to send to Fluent's /oauth2/token.
- * @return                   Promise (from async)
  */
 export { getAccessToken, getFluentEvents }

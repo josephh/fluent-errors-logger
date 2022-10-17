@@ -27,12 +27,12 @@ Resources:
       Handler: src/handlers/scheduled-event-logger.scheduledEventLoggerHandler
       # This property associates this Lambda function with a scheduled CloudWatch Event. For all available properties, see
       # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
-      # This example runs every hour.
+      # This example runs every 10 mins.
       Events:
         CloudWatchEvent:
           Type: Schedule
           Properties:
-            Schedule: cron(0 2 * * * *)
+            Schedule: cron(0 10 * * * *)
       MemorySize: 128
       Timeout: 100
       Environment:
