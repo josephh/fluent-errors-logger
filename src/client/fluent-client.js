@@ -8,7 +8,7 @@ const instance = axios.create({
 
 const getFluentEvents = async (accessToken) => {
   const params = new URLSearchParams()
-  params.append('eventType', 'ORCHESTRATION')
+  params.append('eventType', 'ORCHESTRATION_AUDIT')
   const config = {
     params: params,
     headers: {

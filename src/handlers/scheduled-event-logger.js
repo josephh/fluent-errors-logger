@@ -12,13 +12,13 @@ export const scheduledEventLoggerHandler = async (event, context) => {
       let at = await getAccessToken()
       // get some Fluent event lines
       let fluentEvents = await getFluentEvents(at)
-      if(fluentEvents) console.debug("Fluent events [0] : " + fluentEvents.results[0].type)
-      else console.debug("No Fluent events read")
-      if(fluentEvents) console.debug("Fluent events start: " + fluentEvents.start)
+      if(!fluentEvents) {
+        console.warn("No Fluent events read")
+        return
+      }
       if(fluentEvents) console.debug("Fluent events count: " + fluentEvents.count)
       fluentEvents.results.forEach((item, i) => {
-        console.debug(`id: ${item.id}; type: ${item.type}; accountId: ${item.accountId};
-          retailerId: ${item.retailerId}; context.entityType: ${item.context.entityType}.`)
+        console.debug(`id: ${item.id}; type: ${item.type}; category: ${item.category}.`)
       })
     } catch(err) {
       console.error('Error calling Fluent. Details : ', err)
