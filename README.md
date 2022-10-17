@@ -29,7 +29,7 @@ To get started, see the following:
 ## Local development
 The template.yaml defines properties to be used by the application source code, such as "FLUENT_HOST_NAME".  There are different ways to override these property values, such as via the AWS Lambda console when the application is deployed to AWS.  For local development, provide a file - as an example, named 'sit-env.json' - and add properties to that file that you wish to override, e.g.
 ```
-"FLUENT_HOST_NAME": "sitbquk.sandbox.api.fluentretail.com"
+"FLUENT_HOST_NAME": "abc.sandbox.api.fluentretail.com"
 ```    
 Run the application locally, providing the filename to the command line as an argument to the option `--env-vars`:
 > sam build && sam local invoke ScheduledEventLogger --event events/event-cloudwatch-event.json --env-vars sit-env.json
@@ -144,4 +144,5 @@ aws cloudformation delete-stack --stack-name fluent-errors-logger
 
 For an introduction to the AWS SAM specification, the AWS SAM CLI, and serverless application concepts, see the [AWS SAM Developer Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html).
 
-Next, you can use the AWS Serverless Application Repository to deploy ready-to-use apps that go beyond Hello World samples and learn how authors developed their applications. For more information, see the [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/) and the [AWS Serverless Application Repository Developer Guide](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/what-is-serverlessrepo.html).
+Next, you can use the AWS Serverless Application Repo.
+ory to deploy ready-to-use apps that go beyond Hello World samples and learn how authors developed their applications. For more information, see the [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/) and the [AWS Serverless Application Repository Developer Guide](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/what-is-serverlessrepo.html).
