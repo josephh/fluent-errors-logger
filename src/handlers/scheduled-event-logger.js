@@ -16,10 +16,13 @@ export const scheduledEventLoggerHandler = async (event, context) => {
         console.warn("No Fluent events read")
         return
       }
-      if(fluentEvents) console.debug("Fluent events count: " + fluentEvents.count)
-      fluentEvents.results.forEach((item, i) => {
-        console.debug(`id: ${item.id}; type: ${item.type}; category: ${item.category}.`)
-      })
+      if(fluentEvents) {
+        console.debug("Fluent events count: " + fluentEvents.count)
+        fluentEvents.results.forEach((fe, i) => {
+          console.debug(`id: ${fe.id}; type: ${fe.type}; category: ${fe.category}.`)
+        })
+      }
+
     } catch(err) {
       console.error('Error calling Fluent. Details : ', err)
     }
